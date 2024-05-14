@@ -10,9 +10,13 @@ public class Main {
             Scanner fileScanner = new Scanner(inputFile);
             int wordCount = 0;
 
-            while (fileScanner.hasNextLine()) {
+            while (fileScanner.hasNext()) {
                 String line = fileScanner.nextLine();
-                String[] words = line.split("\\s+");
+
+                String[] words = line.split("[^a-zA-Z]+");
+                for(String w: words){
+                    System.out.println(w);
+                }
                 wordCount += words.length;
             }
 
